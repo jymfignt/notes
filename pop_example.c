@@ -92,3 +92,4 @@ void calcAverage(int n,struct Student student[100])
 
     }
 }
+
