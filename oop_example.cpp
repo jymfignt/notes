@@ -7,20 +7,22 @@ class Student {
 private:
     string name;
     int score;
-
 public:
-
-    Student(string n, int s) : name(n), score(s) {}
+    Student(string n, int s)  //构造函数
+    {
+        name = n;
+        score = s;        
+    }
     string getName() { return name; }
     int getScore() { return score; }
     void show() {
         cout << name << ": " << score << endl;
     }
+   ~Student (){}
 };
 class StudentManager {
 private:
     vector<Student> students;  // 存储学生对象的列表
-
 public:
     void addStudent(string name, int score) {
         students.push_back(Student(name, score));
@@ -30,9 +32,8 @@ public:
             cout << "There's no student data.\n";
             return;
         }
-        for (auto &s : students) {
+        for (auto &s : students)
             s.show();
-        }
     }
     void calcAverage() {
         if (students.empty()) {
