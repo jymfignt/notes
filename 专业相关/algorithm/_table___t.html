@@ -1,0 +1,141 @@
+<html><head><link rel="stylesheet" type="text/css" href="https://unpkg.com/vditor@3.11.0/dist/index.css"/>
+<script src="https://unpkg.com/vditor@3.11.0/dist/js/i18n/zh_CN.js"></script>
+<script src="https://unpkg.com/vditor@3.11.0/dist/method.min.js"></script></head>
+<body><div class="vditor-reset" id="preview"><table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Best Case</th>
+<th align="center">Worst</th>
+<th align="center">Average</th>
+<th align="center">Space</th>
+<th align="center"></th>
+<th align="center">Basic Operation</th>
+<th align="center">Stability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Sequential Search(Linear)</td>
+<td align="center">O(1)</td>
+<td align="center">O(n)</td>
+<td align="center">O(n/2)</td>
+<td align="center">O(1)</td>
+<td align="center"></td>
+<td align="center">Element Comparison</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Binary Search</td>
+<td align="center">O(1)</td>
+<td align="center">O(<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(1)</td>
+<td align="center">Requires sorted input</td>
+<td align="center">Element Comparison</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Merge Sort</td>
+<td align="center">O(n<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(n<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(n<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(n)</td>
+<td align="center">not in-place</td>
+<td align="center">Element Comparison</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">Quick Sort</td>
+<td align="center">O(n<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(<span class="language-math">n^2</span>)(如果中位为枢纽，有可能n<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(n<span class="language-math">\log{n}</span>)</td>
+<td align="center">O(n)worstO(<span class="language-math">\log{n}</span>)best&amp;aver</td>
+<td align="center">pivot index</td>
+<td align="center">Element Comparison</td>
+<td align="center">No</td>
+</tr>
+<tr>
+<td align="center">Find Maximumand Minimum</td>
+<td align="center">n</td>
+<td align="center">n</td>
+<td align="center">n</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center">Element Comparison</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Strassen's MatrixMultiplication</td>
+<td align="center">O(<span class="language-math">n^{2.81}</span>)</td>
+<td align="center">O(<span class="language-math">n^{2.81}</span>)</td>
+<td align="center">O(<span class="language-math">n^{2.81}</span>)</td>
+<td align="center">O(<span class="language-math">n^2</span>)</td>
+<td align="center"></td>
+<td align="center">Matrix Addition and Multiplication</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Tiling the defectivechessboard</td>
+<td align="center">O(<span class="language-math">n^2</span>)</td>
+<td align="center">O(<span class="language-math">n^2</span>)</td>
+<td align="center">O(<span class="language-math">n^2</span>)</td>
+<td align="center">O(<span class="language-math">\log{n}</span>)</td>
+<td align="center">递归深度为 logn，每层常数空间</td>
+<td align="center">Tile Placement / Recursion</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Radix Sort</td>
+<td align="center">nk</td>
+<td align="center">nk</td>
+<td align="center">nk</td>
+<td align="center">n+k</td>
+<td align="center">k = number of digits</td>
+<td align="center">Digit Place Counting</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">Bubble Sort</td>
+<td align="center">n</td>
+<td align="center"><span class="language-math">n^2</span></td>
+<td align="center"><span class="language-math">n^2</span></td>
+<td align="center">1</td>
+<td align="center">in-place</td>
+<td align="center">Element Comparison</td>
+<td align="center">Yes</td>
+</tr>
+<tr>
+<td align="center">Selection Sort</td>
+<td align="center"><span class="language-math">n^2</span></td>
+<td align="center"><span class="language-math">n^2</span></td>
+<td align="center"><span class="language-math">n^2</span></td>
+<td align="center">1</td>
+<td align="center">in-place</td>
+<td align="center">Element Comparison</td>
+<td align="center">No</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script>
+    const previewElement = document.getElementById('preview')
+    Vditor.setContentTheme('light', 'https://unpkg.com/vditor@3.11.0/dist/css/content-theme');
+    Vditor.codeRender(previewElement);
+    Vditor.highlightRender({"enable":true,"lineNumber":false,"defaultLang":"","style":"github"}, previewElement, 'https://unpkg.com/vditor@3.11.0');
+    Vditor.mathRender(previewElement, {
+        cdn: 'https://unpkg.com/vditor@3.11.0',
+        math: {"engine":"KaTeX","inlineDigit":false,"macros":{}},
+    });
+    Vditor.mermaidRender(previewElement, 'https://unpkg.com/vditor@3.11.0', 'classic');
+    Vditor.SMILESRender(previewElement, 'https://unpkg.com/vditor@3.11.0', 'classic');
+    Vditor.markmapRender(previewElement, 'https://unpkg.com/vditor@3.11.0');
+    Vditor.flowchartRender(previewElement, 'https://unpkg.com/vditor@3.11.0');
+    Vditor.graphvizRender(previewElement, 'https://unpkg.com/vditor@3.11.0');
+    Vditor.chartRender(previewElement, 'https://unpkg.com/vditor@3.11.0', 'classic');
+    Vditor.mindmapRender(previewElement, 'https://unpkg.com/vditor@3.11.0', 'classic');
+    Vditor.abcRender(previewElement, 'https://unpkg.com/vditor@3.11.0');
+    Vditor.mediaRender(previewElement);
+    Vditor.speechRender(previewElement);
+</script>
+<script src="https://unpkg.com/vditor@3.11.0/dist/js/icons/ant.js"></script></body></html>
