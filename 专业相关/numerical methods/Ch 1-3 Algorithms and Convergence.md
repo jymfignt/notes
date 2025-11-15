@@ -1,0 +1,2 @@
+# Rate of Convergence
+Suppose $\left\{\beta_n\right\}_{n=1}^\infty$ is a sequence convergent to zero and $\left\{\alpha_n\right\}_{n=1}^\infty$ converges to a number $\alpha$. If a positive constant K exists with $$|\alpha-\alpha_n|\le K\beta_n \text{ for large n,}$$ then $\left\{\alpha_n\right\}_{n=1}^\infty$ converges to $\alpha$ with rate, or order, of convergence $O(\beta_n)$. It is indicated by $$\alpha_n=\alpha+O(\beta_n)$$
